@@ -1,0 +1,156 @@
+# lightning.pytorch==2.1.2
+seed_everything: 2136974257
+trainer:
+  batch_size_per_gpu: 1
+  accelerator: gpu
+  strategy: ddp
+  devices: '1'
+  num_nodes: 1
+  precision: 32
+  logger:
+  - class_path: lightning.pytorch.loggers.TensorBoardLogger
+    init_args:
+      save_dir: private/speech_outputs_short
+      name: ''
+      version: metavoice
+      log_graph: false
+      default_hp_metric: true
+      prefix: ''
+      sub_dir: null
+      comment: ''
+      purge_step: null
+      max_queue: 10
+      flush_secs: 120
+      filename_suffix: ''
+  callbacks: null
+  fast_dev_run: false
+  max_epochs: null
+  min_epochs: null
+  max_steps: 8000000
+  min_steps: null
+  max_time: null
+  limit_train_batches: null
+  limit_val_batches: null
+  limit_test_batches: null
+  limit_predict_batches: null
+  overfit_batches: 0.0
+  val_check_interval: 10000
+  check_val_every_n_epoch: 1
+  num_sanity_val_steps: null
+  log_every_n_steps: 1000
+  enable_checkpointing: null
+  enable_progress_bar: true
+  enable_model_summary: null
+  accumulate_grad_batches: 1
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: null
+  deterministic: null
+  benchmark: null
+  inference_mode: true
+  use_distributed_sampler: true
+  profiler: null
+  detect_anomaly: false
+  barebones: false
+  plugins: null
+  sync_batchnorm: false
+  reload_dataloaders_every_n_epochs: 0
+  default_root_dir: private/speech_outputs_short
+model:
+  class_path: dnn_models_torch.projects.speechgen.tasks.baselines.metavoice_tts.MetaVoice
+  init_args:
+    huggingface_repo_id: metavoiceio/metavoice-1B-v0.1
+data:
+  chunk_min_length: 1.0
+  root_dir: /data/trungdang
+  num_workers: 24
+  enroll_min_length: 3.0
+  enroll_max_length: 5.0
+  enroll_padded_length: 5.0
+  grapheme_max_len: 750
+  phoneme_max_len: 750
+  semantic_pad_value: 0
+  word_pad_value: null
+  code_pad_value: 0
+  decode_grapheme: false
+  decode_phoneme: true
+  train_dataset:
+    class_path: dnn_models_torch.projects.speechgen.datasets.librilight_v2.LibriLight
+    init_args:
+      code_sample_rate: 24000
+      data_dir: LibriLight/combine_raw
+      num_codebooks: 8
+      frame_rate: 75
+      testing: false
+      use_cache: true
+  val_dataset: null
+  test_dataset:
+    class_path: dnn_models_torch.projects.speechgen.datasets.LibriTTS
+    init_args:
+      name: null
+      data_dir: LibriTTS
+      alignment_data_dir: LibriTTSCorpusLabel/lab/word
+      phoneme_vocab_path: data/valle/vocab_phonemes.txt
+      set_name: test-clean
+      decode_phoneme: true
+      return_valle_phonemes: false
+      num_samples: 120
+      sample_offset: 0
+      min_audio_duration: 3.0
+      max_audio_duration: 10.0
+      min_enroll_duration: 3.0
+      max_enroll_duration: null
+      same_speaker_sample_range: 5
+      wav_sample_rate: 24000
+      device: cuda:1
+      return_whisper_text_stream: true
+      model_path: facebook/encodec_24khz
+      n_codebooks: 16
+      use_enhancer: false
+  predict_dataset: null
+  word_aware_sampling: true
+  batching_strategy: self
+  chunking_strategy: punctuation
+  num_graphemes_per_second: 50
+  testing: false
+  max_added_ending_silence: 0.0
+  output_text_stream: false
+  output_whisper_text: false
+  output_full_enroll_wav: true
+  requires_text_aligning_with_word_start_positions: false
+  add_silence_for_late_text_stream: false
+  word_boundary_offset_min: 3
+  word_boundary_offset_max: 10
+  phoneme_fill_blank_with_token_ahead: true
+  grapheme_fill_blank_with_token_ahead: true
+  word_start_position_drop_rate: 0.0
+  output_semantic_stream_pos: false
+  semantic_stream_word_dropout: random
+  semantic_stream_num_shifted_frames: 30
+  tokenizer_type: whisper_v3
+  num_items_per_sample: 4
+  max_whisper_words_per_chunk_for_inference: 4
+  min_whisper_words_per_chunk_for_inference: 2
+  streaming_max_chunk_after: 2
+  streaming_max_chunk_before: 100
+  cer_matching_threshold: 0.1
+checkpoint:
+  every_n_train_steps: null
+  monitor: val/cer/wav2vec2-base-960h
+  mode: min
+  save_top_k: 10
+  verbose: true
+  dirpath: null
+  filename: null
+  save_last: true
+  save_weights_only: false
+  auto_insert_metric_name: true
+  train_time_interval: null
+  every_n_epochs: null
+  save_on_train_epoch_end: false
+  enable_version_counter: true
+predict_output_tag: default
+experiment_id: untitled
+predict_set_name: libritts-test-clean
+ckpt_path: null
+verbose: true
+lr_scheduler: null

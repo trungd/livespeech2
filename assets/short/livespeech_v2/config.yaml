@@ -1,0 +1,289 @@
+# lightning.pytorch==2.1.2
+seed_everything: 62770765
+trainer:
+  batch_size_per_gpu: 1
+  accelerator: gpu
+  strategy: ddp
+  devices: '1'
+  num_nodes: 1
+  precision: 32
+  logger:
+  - class_path: lightning.pytorch.loggers.TensorBoardLogger
+    init_args:
+      save_dir: private/speech_outputs_short
+      name: ''
+      version: mamba_tts_d1536_word_plus_1_rope_4x_lambda0_1
+      log_graph: false
+      default_hp_metric: true
+      prefix: ''
+      sub_dir: null
+      comment: ''
+      purge_step: null
+      max_queue: 10
+      flush_secs: 120
+      filename_suffix: ''
+  callbacks: null
+  fast_dev_run: false
+  max_epochs: null
+  min_epochs: null
+  max_steps: 2000000
+  min_steps: null
+  max_time: null
+  limit_train_batches: null
+  limit_val_batches: null
+  limit_test_batches: null
+  limit_predict_batches: null
+  overfit_batches: 0.0
+  val_check_interval: 10000
+  check_val_every_n_epoch: 1
+  num_sanity_val_steps: null
+  log_every_n_steps: 1000
+  enable_checkpointing: null
+  enable_progress_bar: true
+  enable_model_summary: null
+  accumulate_grad_batches: 1
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: null
+  deterministic: null
+  benchmark: null
+  inference_mode: true
+  use_distributed_sampler: true
+  profiler: null
+  detect_anomaly: false
+  barebones: false
+  plugins: null
+  sync_batchnorm: false
+  reload_dataloaders_every_n_epochs: 0
+  default_root_dir: private/speech_outputs_short
+model:
+  class_path: dnn_models_torch.projects.speechgen.tasks.speechgen.TTS
+  init_args:
+    test_metric_names_and_args: &id001
+    - - wer
+      - - openai/whisper-large-v3
+    - - cer
+      - - facebook/wav2vec2-base-960h
+    - - ss
+      - - speechbrain/spkrec-ecapa-voxceleb
+    - - dnsmos
+      - []
+    val_metric_name_and_args: *id001
+    name: mamba
+    hidden_dim: 1536
+    cross_key_value_hidden_dim: null
+    enr_encoder_hidden_dim: 1024
+    enr_encoder_num_layers: 6
+    enr_encoder_num_heads: 8
+    enr_emb_len: 64
+    use_enr_encoder: true
+    enr_encoder: null
+    num_heads: 16
+    num_layers: 6
+    num_tokens_per_codebook: 1024
+    num_semantic_tokens: 51866
+    use_whisper_emb: false
+    num_codebooks: 16
+    prompt_length: 0.0
+    chunk_hop: 5.0
+    chunk_length: 10.0
+    semantic_dropout_rate: 0.0
+    semantic_max_len: 75
+    semantic_embed_bottleneck_dim: null
+    phoneme_model_name: null
+    grapheme_model_name: null
+    codec: null
+    codec_model_name: gencodec/encodec_24khz_frozen_encoder_8542
+    codec_ckpt_path: encodec_24khz_frozen_encoder_8542/checkpoints/epoch=0-step=800000.ckpt
+    use_wav_to_phoneme_encoder: false
+    use_wav_to_grapheme_encoder: false
+    use_semantic_code: grapheme
+    semantic_code_position: first
+    use_text_stream_as_codes: false
+    condition_on_length: null
+    length_dropout_rate: 0.0
+    condition_on_text_stream: false
+    ckpt_path: null
+    generation_options:
+      use_sampling: true
+      temp:
+      - 1.0
+      - 1.0
+      - 1.0
+      top_k:
+      - 3
+      - 20
+      - 20
+      top_p: 0.0
+      include_length: true
+      simulate_text_streaming: false
+      limit_enroll_length: null
+      num_generations_per_sample: 1
+      num_codebooks: null
+      cache_outputs: false
+      max_gen_length: 10000
+      mamba_cache_graph: false
+      reuse_captured_graph: false
+      beam_size: 1
+      beam_interval: 1000
+      beam_score_type: logits
+      use_guiding_tokens: true
+      strict_guidance: false
+      guiding_lambda: 1.0
+      max_consecutive_same_tokens: 1
+    generation_pattern: delayed
+    semantic_unit: word
+    causal_cross_attention: false
+    output_type: logits
+    codebook_loss_weights: null
+    emb_loss_weight: 0.0
+    codebook_weight_type: none
+    max_period: 10000
+    positional_embedding: rope
+    compile: false
+    memory_efficient: false
+    context_reduction_pattern: null
+    past_context: null
+    exp_decay_lambda: 5.0
+    codebook_weight_decay_step: 2000000
+    context_reduction_in_cross_attention: false
+    loss_type: ce
+    residual_loss_weight: true
+    residual_loss_lambda: 0.1
+    residual_loss_alpha: 0.0
+    residual_loss_trim_weight: false
+    num_codebook_head_layers: 6
+    num_codebooks_per_head:
+    - 4
+    - 4
+    - 4
+    - 5
+    use_shared_heads: false
+    num_layer_channels: 1
+    layer_out_dim_downscale: 1
+    skip_probability_greater_than: 0.0
+    predict_codebook_residual: false
+    codebook_residual_loss_weight: 1.0
+    use_different_head_embeddings: false
+    parallel_head_options:
+      num_layers: 0
+      local_attn_range: -1
+      stop_gradient_from_second_to_last_groups: false
+      separate_cross_memory: false
+      cross_memory_enroll_len: 64
+      remove_text_condition: true
+      text_condition_for_first_head_only: false
+    text_dropout: false
+    condition_keys:
+    - enroll
+    - text
+data:
+  chunk_min_length: 1.0
+  root_dir: /data/trungdang
+  num_workers: 24
+  enroll_min_length: 3.0
+  enroll_max_length: 5.0
+  enroll_padded_length: 5.0
+  grapheme_max_len: 750
+  phoneme_max_len: 750
+  semantic_pad_value: 0
+  word_pad_value: null
+  code_pad_value: 0
+  decode_grapheme: false
+  decode_phoneme: true
+  train_dataset:
+    class_path: dnn_models_torch.projects.speechgen.datasets.librilight_v2.LibriLight
+    init_args:
+      code_sample_rate: 24000
+      data_dir: LibriLight/combine_raw
+      num_codebooks: 8
+      frame_rate: 75
+      testing: false
+      use_cache: true
+  val_dataset: null
+  test_dataset:
+    class_path: dnn_models_torch.projects.speechgen.datasets.LibriTTS
+    init_args:
+      name: null
+      data_dir: LibriTTS
+      alignment_data_dir: LibriTTSCorpusLabel/lab/word
+      phoneme_vocab_path: data/valle/vocab_phonemes.txt
+      set_name: test-clean
+      decode_phoneme: true
+      return_valle_phonemes: false
+      num_samples: 120
+      sample_offset: 0
+      min_audio_duration: 3.0
+      max_audio_duration: 10.0
+      min_enroll_duration: 3.0
+      max_enroll_duration: null
+      same_speaker_sample_range: 5
+      wav_sample_rate: 24000
+      device: cuda:1
+      return_whisper_text_stream: true
+      model_path: facebook/encodec_24khz
+      n_codebooks: 16
+      use_enhancer: false
+  predict_dataset: null
+  word_aware_sampling: true
+  batching_strategy: self
+  chunking_strategy: punctuation
+  num_graphemes_per_second: 50
+  testing: false
+  max_added_ending_silence: 0.0
+  output_text_stream: false
+  output_whisper_text: true
+  output_full_enroll_wav: true
+  requires_text_aligning_with_word_start_positions: false
+  add_silence_for_late_text_stream: false
+  word_boundary_offset_min: 3
+  word_boundary_offset_max: 10
+  phoneme_fill_blank_with_token_ahead: true
+  grapheme_fill_blank_with_token_ahead: true
+  word_start_position_drop_rate: 0.0
+  output_semantic_stream_pos: false
+  semantic_stream_word_dropout: random
+  semantic_stream_num_shifted_frames: 30
+  tokenizer_type: whisper_v3
+  num_items_per_sample: 4
+  max_whisper_words_per_chunk_for_inference: 4
+  min_whisper_words_per_chunk_for_inference: 2
+  streaming_max_chunk_after: 2
+  streaming_max_chunk_before: 100
+  cer_matching_threshold: 0.1
+checkpoint:
+  every_n_train_steps: null
+  monitor: val/cer/wav2vec2-base-960h
+  mode: min
+  save_top_k: 10
+  verbose: true
+  dirpath: null
+  filename: null
+  save_last: true
+  save_weights_only: false
+  auto_insert_metric_name: true
+  train_time_interval: null
+  every_n_epochs: null
+  save_on_train_epoch_end: false
+  enable_version_counter: true
+predict_output_tag: default
+experiment_id: untitled
+predict_set_name: libritts-test-clean
+ckpt_path: /data/aml_checkpoints/mamba_tts_d1536_word_plus_1_rope_4x_lambda0_1/epoch=4-step=1990000.ckpt
+verbose: true
+lr_scheduler:
+  class_path: torch.optim.lr_scheduler.OneCycleLR
+  init_args:
+    max_lr: 5.0e-05
+    total_steps: 2000000
+    epochs: null
+    steps_per_epoch: null
+    pct_start: 0.01
+    anneal_strategy: cos
+    cycle_momentum: true
+    base_momentum: 0.85
+    max_momentum: 0.95
+    div_factor: 25.0
+    final_div_factor: 10000.0
+    three_phase: false
+    last_epoch: -1
+    verbose: false

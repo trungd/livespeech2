@@ -1,0 +1,14 @@
+{
+    "test/num_samples": 30.0,
+    "test/wer/whisper-large-v3": 0.03246239200234413,
+    "test/cer/wav2vec2-base-960h": 0.03547247499227524,
+    "test/ss/spkrec-ecapa-voxceleb": 0.5657327175140381,
+    "test/dnsmos": 3.9133827686309814,
+    "test/avg_length_diff": 1.5240319967269897,
+    "test/avg_enroll_duration": 4.725336074829102,
+    "test/avg_full_enroll_duration": 11.077678680419922,
+    "test/avg_target_duration": 14.734333992004395,
+    "test/avg_output_duration": 13.903834342956543,
+    "test/rtf": 0.01783556304872036,
+    "test/latency": 0.0
+}
