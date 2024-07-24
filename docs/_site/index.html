@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Zero-Shot Text-to-Speech from Continuous Text Streams | LiveSpeech</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Zero-Shot Text-to-Speech from Continuous Text Streams" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/livespeech/" />
+<meta property="og:url" content="http://localhost:4000/livespeech/" />
+<meta property="og:site_name" content="LiveSpeech" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Zero-Shot Text-to-Speech from Continuous Text Streams" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"Zero-Shot Text-to-Speech from Continuous Text Streams","name":"LiveSpeech","url":"http://localhost:4000/livespeech/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/livespeech/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/livespeech/feed.xml" title="LiveSpeech" /></head>
+<style>
+    .wrapper {
+        max-width: calc(1400px - (30px * 2));
+    }
+    audio {
+        width: 150px;
+    }
+  </style>
+
+  <body><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header" style="text-align: center;">
+    <h1 class="post-title" style="font-size: 200%">Zero-Shot Text-to-Speech from Continuous Text Streams</h1>
+  </header>
+
+  <div class="post-content">
+    <p style="text-align: center; font-style: italic"><a href="mailto:trungv.dang@outlook.com">Trung Dang</a>, David Aponte, Dung Tran, Tianyi Chen, Kazuhito Koishida<br />Applied Sciences Group, Microsoft Corporation</p>
+
+<p style="text-align: center">[<a href="">arXiv</a>]</p>
+
+<h3 id="abstract">Abstract</h3>
+
+<p>Existing zero-shot text-to-speech (TTS) systems are typically designed to process complete sentences and are constrained by the maximum duration for which they have been trained. However, in many streaming applications, texts arrive continuously in short chunks, necessitating instant responses from the system. We identify the essential capabilities required for chunk-level streaming and introduce LiveSpeech 2, a stream-aware model that supports infinitely long speech generation, text-audio stream synchronization, and seamless transitions between short speech chunks. To achieve these, we propose (1) adopting Mamba, a class of sequence modeling distinguished by linear-time decoding, which is augmented by cross-attention mechanisms for conditioning, (2) utilizing rotary positional embeddings in the computation of cross-attention, enabling the model to process an infinite text stream by sliding a window, and (3) decoding with semantic guidance, a technique that aligns speech with the transcript during inference with minimal overhead. Experimental results demonstrate that our models are competitive with state-of-the-art language model-based zero-shot TTS models, while also providing flexibility to support a wide range of streaming scenarios.</p>
+
+<div style="text-align: center">
+<img src="./assets/livespeech2.png" alt="Model Architecture" width="75%" />
+<p>
+Model Architecture
+</p>
+</div>
+
+<h3 id="samples-short">Samples (Short)</h3>
+
+<div style="overflow: scroll">
+<table style="width: 2000px">
+    <tr>
+        <td width="300">Transcript</td>
+        <td>Enrollment</td>
+        <td>Reference</td>
+        <td>YourTTS</td>
+        <td>SpeechX</td>
+        <td>XTTS-v2</td>
+        <td>MetaVoice</td>
+        <td>LiveSpeech v1</td>
+        <td>LiveSpeech v2</td>
+    </tr>
+    
+        <tr>
+            <td width="300">the girl entered and gave an involuntary cry of surprise</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/6829_68771_000027_000000.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/6829_68771_000027_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/6829_68771_000027_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/6829_68771_000027_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/6829_68771_000027_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/6829_68771_000027_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/6829_68771_000027_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/6829_68771_000027_000000.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">he would be like a philologist refusing to examine a fact in language a philosopher hesitating to scrutinize a fact in humanity</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/4507_16021_000022_000003.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/4507_16021_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/4507_16021_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/4507_16021_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/4507_16021_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/4507_16021_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/4507_16021_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/4507_16021_000022_000003.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">the beggar is plea the politician is scepter and the drummer is ablest assistant</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/121_121726_000005_000001.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/121_121726_000005_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/121_121726_000005_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/121_121726_000005_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/121_121726_000005_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/121_121726_000005_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/121_121726_000005_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/121_121726_000005_000001.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">the lord who has given us power to teach and to hear let him also give us the power to serve and to do</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/2830_3979_000021_000000.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/2830_3979_000021_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/2830_3979_000021_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/2830_3979_000021_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/2830_3979_000021_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/2830_3979_000021_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/2830_3979_000021_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/2830_3979_000021_000000.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">i could not see that in either case holmes had come upon the clue for which he was searching</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/1580_141084_000009_000005.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/1580_141084_000009_000005.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/1580_141084_000009_000005.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/1580_141084_000009_000005.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/1580_141084_000009_000005.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/1580_141084_000009_000005.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/1580_141084_000009_000005.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/1580_141084_000009_000005.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">the boolaroo stared a moment and then he fell back in his throne laughing boisterously</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/8555_284447_000039_000000.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/8555_284447_000039_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/8555_284447_000039_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/8555_284447_000039_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/8555_284447_000039_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/8555_284447_000039_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/8555_284447_000039_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/8555_284447_000039_000000.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">every word fell distinctly in perfect harmony and eloquence upon louis xiv is ears</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/7127_75946_000058_000000.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/7127_75946_000058_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/7127_75946_000058_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/7127_75946_000058_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/7127_75946_000058_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/7127_75946_000058_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/7127_75946_000058_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/7127_75946_000058_000000.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">rodolfo thanked her and supper being ready they went to join the rest of the party at table</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/5639_40744_000027_000002.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/5639_40744_000027_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/5639_40744_000027_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/5639_40744_000027_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/5639_40744_000027_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/5639_40744_000027_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/5639_40744_000027_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/5639_40744_000027_000002.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">he heard that she was downstairs and ran to meet her with beating heart</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/1995_1837_000024_000000.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/1995_1837_000024_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/1995_1837_000024_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/1995_1837_000024_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/1995_1837_000024_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/1995_1837_000024_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/1995_1837_000024_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/1995_1837_000024_000000.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td width="300">i wanted to talk with thee a little about thy plans</td>
+            <td><audio controls=""><source src="./assets/short/enrollment_samples/4970_29095_000006_000000.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/reference_raw/4970_29095_000006_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/yourtts/4970_29095_000006_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/valle/4970_29095_000006_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/xtts_v2/4970_29095_000006_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/metavoice/4970_29095_000006_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v1/4970_29095_000006_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/short/livespeech_v2/4970_29095_000006_000000.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+</table>
+</div>
+
+<h3 id="samples-long">Samples (Long)</h3>
+
+<table>
+    <tr>
+        <td style="width: 200px">Transcript</td>
+        <td>Enrollment</td>
+        <td>Reference</td>
+        <td>YourTTS</td>
+        <td>XTTS-v2</td>
+        <td>LiveSpeech v2</td>
+    </tr>
+    
+        <tr>
+            <td>and immediately on his sitting down there got up a gentleman to whom i had not been introduced before this day and gave the health of missus neverbend and the ladies of britain eula</td>
+            <td><audio controls=""><source src="./assets/long/enrollment_samples/8455_210777_000022_000003.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/reference_raw/8455_210777_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/yourtts/8455_210777_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/xtts_v2/8455_210777_000022_000003.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/livespeech_v2/8455_210777_000022_000003.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td>the definition of truth as the correspondence between beliefs and facts seems peculiarly evident in the case of memory as against not only the pragmatist definition but also the idealist definition by means of coherence</td>
+            <td><audio controls=""><source src="./assets/long/enrollment_samples/8230_279154_000021_000002.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/reference_raw/8230_279154_000021_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/yourtts/8230_279154_000021_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/xtts_v2/8230_279154_000021_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/livespeech_v2/8230_279154_000021_000002.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td>if you stay it must be to sit down here in the shadow and take the part of uncas until such times as the cunning of the indians discover the cheat when as i have already said your times of trial will come</td>
+            <td><audio controls=""><source src="./assets/long/enrollment_samples/1320_122617_000055_000002.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/reference_raw/1320_122617_000055_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/yourtts/1320_122617_000055_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/xtts_v2/1320_122617_000055_000002.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/livespeech_v2/1320_122617_000055_000002.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td>henry was about 23 years of age of an active turn brown skin and had given the question of freedom his most serious attention as his actions proved</td>
+            <td><audio controls=""><source src="./assets/long/enrollment_samples/8463_287645_000007_000000.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/reference_raw/8463_287645_000007_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/yourtts/8463_287645_000007_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/xtts_v2/8463_287645_000007_000000.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/livespeech_v2/8463_287645_000007_000000.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+        <tr>
+            <td>this was the call of life to his soul not the dull gross voice of the world of duties and despair not the inhuman voice that had called him to the pale service of the altar</td>
+            <td><audio controls=""><source src="./assets/long/enrollment_samples/1089_134691_000035_000001.enroll.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/reference_raw/1089_134691_000035_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/yourtts/1089_134691_000035_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/xtts_v2/1089_134691_000035_000001.wav" type="audio/wav" /></audio></td>
+            <td><audio controls=""><source src="./assets/long/livespeech_v2/1089_134691_000035_000001.wav" type="audio/wav" /></audio></td>
+        </tr>
+    
+</table>
+
+
+  </div>
+
+</article>
+      </div>
+    </main></body>
+
+</html>
