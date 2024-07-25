@@ -1,0 +1,240 @@
+- enroll: ./assets/long/enrollment_samples/1089_134691_000035_000001.enroll.wav
+  id: '1'
+  samples:
+  - ./assets/long/reference_raw/1089_134691_000035_000001.wav
+  - ./assets/long/xtts_v2/1089_134691_000035_000001.wav
+  - ./assets/long/livespeech_v2/1089_134691_000035_000001.wav
+  - ./assets/long/yourtts/1089_134691_000035_000001.wav
+  - ./assets/long/reference_12kbps/1089_134691_000035_000001.wav
+- enroll: ./assets/long/enrollment_samples/8230_279154_000021_000002.enroll.wav
+  id: '2'
+  samples:
+  - ./assets/long/yourtts/8230_279154_000021_000002.wav
+  - ./assets/long/livespeech_v2/8230_279154_000021_000002.wav
+  - ./assets/long/xtts_v2/8230_279154_000021_000002.wav
+  - ./assets/long/reference_12kbps/8230_279154_000021_000002.wav
+  - ./assets/long/reference_raw/8230_279154_000021_000002.wav
+- enroll: ./assets/long/enrollment_samples/8230_279154_000028_000004.enroll.wav
+  id: '3'
+  samples:
+  - ./assets/long/livespeech_v2/8230_279154_000028_000004.wav
+  - ./assets/long/xtts_v2/8230_279154_000028_000004.wav
+  - ./assets/long/reference_12kbps/8230_279154_000028_000004.wav
+  - ./assets/long/yourtts/8230_279154_000028_000004.wav
+  - ./assets/long/reference_raw/8230_279154_000028_000004.wav
+- enroll: ./assets/long/enrollment_samples/1089_134691_000035_000001.enroll.wav
+  id: '4'
+  samples:
+  - ./assets/long/reference_raw/1089_134691_000035_000001.wav
+  - ./assets/long/reference_12kbps/1089_134691_000035_000001.wav
+  - ./assets/long/yourtts/1089_134691_000035_000001.wav
+  - ./assets/long/xtts_v2/1089_134691_000035_000001.wav
+  - ./assets/long/livespeech_v2/1089_134691_000035_000001.wav
+- enroll: ./assets/long/enrollment_samples/2961_961_000023_000003.enroll.wav
+  id: '5'
+  samples:
+  - ./assets/long/livespeech_v2/2961_961_000023_000003.wav
+  - ./assets/long/reference_raw/2961_961_000023_000003.wav
+  - ./assets/long/reference_12kbps/2961_961_000023_000003.wav
+  - ./assets/long/yourtts/2961_961_000023_000003.wav
+  - ./assets/long/xtts_v2/2961_961_000023_000003.wav
+- enroll: ./assets/long/enrollment_samples/5683_32865_000018_000000.enroll.wav
+  id: '6'
+  samples:
+  - ./assets/long/reference_12kbps/5683_32865_000018_000000.wav
+  - ./assets/long/xtts_v2/5683_32865_000018_000000.wav
+  - ./assets/long/reference_raw/5683_32865_000018_000000.wav
+  - ./assets/long/livespeech_v2/5683_32865_000018_000000.wav
+  - ./assets/long/yourtts/5683_32865_000018_000000.wav
+- enroll: ./assets/long/enrollment_samples/7176_88083_000005_000002.enroll.wav
+  id: '7'
+  samples:
+  - ./assets/long/reference_12kbps/7176_88083_000005_000002.wav
+  - ./assets/long/xtts_v2/7176_88083_000005_000002.wav
+  - ./assets/long/livespeech_v2/7176_88083_000005_000002.wav
+  - ./assets/long/yourtts/7176_88083_000005_000002.wav
+  - ./assets/long/reference_raw/7176_88083_000005_000002.wav
+- enroll: ./assets/long/enrollment_samples/2300_131720_000010_000004.enroll.wav
+  id: '8'
+  samples:
+  - ./assets/long/livespeech_v2/2300_131720_000010_000004.wav
+  - ./assets/long/reference_12kbps/2300_131720_000010_000004.wav
+  - ./assets/long/xtts_v2/2300_131720_000010_000004.wav
+  - ./assets/long/yourtts/2300_131720_000010_000004.wav
+  - ./assets/long/reference_raw/2300_131720_000010_000004.wav
+- enroll: ./assets/long/enrollment_samples/8224_274384_000031_000001.enroll.wav
+  id: '9'
+  samples:
+  - ./assets/long/yourtts/8224_274384_000031_000001.wav
+  - ./assets/long/reference_raw/8224_274384_000031_000001.wav
+  - ./assets/long/xtts_v2/8224_274384_000031_000001.wav
+  - ./assets/long/reference_12kbps/8224_274384_000031_000001.wav
+  - ./assets/long/livespeech_v2/8224_274384_000031_000001.wav
+- enroll: ./assets/long/enrollment_samples/4446_2273_000020_000001.enroll.wav
+  id: '10'
+  samples:
+  - ./assets/long/livespeech_v2/4446_2273_000020_000001.wav
+  - ./assets/long/reference_12kbps/4446_2273_000020_000001.wav
+  - ./assets/long/yourtts/4446_2273_000020_000001.wav
+  - ./assets/long/xtts_v2/4446_2273_000020_000001.wav
+  - ./assets/long/reference_raw/4446_2273_000020_000001.wav
+- enroll: ./assets/long/enrollment_samples/1089_134691_000035_000001.enroll.wav
+  id: '11'
+  samples:
+  - ./assets/long/yourtts/1089_134691_000035_000001.wav
+  - ./assets/long/xtts_v2/1089_134691_000035_000001.wav
+  - ./assets/long/reference_12kbps/1089_134691_000035_000001.wav
+  - ./assets/long/livespeech_v2/1089_134691_000035_000001.wav
+  - ./assets/long/reference_raw/1089_134691_000035_000001.wav
+- enroll: ./assets/long/enrollment_samples/5105_28233_000018_000002.enroll.wav
+  id: '12'
+  samples:
+  - ./assets/long/livespeech_v2/5105_28233_000018_000002.wav
+  - ./assets/long/yourtts/5105_28233_000018_000002.wav
+  - ./assets/long/reference_raw/5105_28233_000018_000002.wav
+  - ./assets/long/reference_12kbps/5105_28233_000018_000002.wav
+  - ./assets/long/xtts_v2/5105_28233_000018_000002.wav
+- enroll: ./assets/long/enrollment_samples/8230_279154_000021_000002.enroll.wav
+  id: '13'
+  samples:
+  - ./assets/long/reference_raw/8230_279154_000021_000002.wav
+  - ./assets/long/reference_12kbps/8230_279154_000021_000002.wav
+  - ./assets/long/yourtts/8230_279154_000021_000002.wav
+  - ./assets/long/livespeech_v2/8230_279154_000021_000002.wav
+  - ./assets/long/xtts_v2/8230_279154_000021_000002.wav
+- enroll: ./assets/long/enrollment_samples/5683_32879_000014_000001.enroll.wav
+  id: '14'
+  samples:
+  - ./assets/long/livespeech_v2/5683_32879_000014_000001.wav
+  - ./assets/long/reference_raw/5683_32879_000014_000001.wav
+  - ./assets/long/xtts_v2/5683_32879_000014_000001.wav
+  - ./assets/long/yourtts/5683_32879_000014_000001.wav
+  - ./assets/long/reference_12kbps/5683_32879_000014_000001.wav
+- enroll: ./assets/long/enrollment_samples/8230_279154_000028_000004.enroll.wav
+  id: '15'
+  samples:
+  - ./assets/long/yourtts/8230_279154_000028_000004.wav
+  - ./assets/long/xtts_v2/8230_279154_000028_000004.wav
+  - ./assets/long/livespeech_v2/8230_279154_000028_000004.wav
+  - ./assets/long/reference_raw/8230_279154_000028_000004.wav
+  - ./assets/long/reference_12kbps/8230_279154_000028_000004.wav
+- enroll: ./assets/long/enrollment_samples/5105_28241_000018_000000.enroll.wav
+  id: '16'
+  samples:
+  - ./assets/long/xtts_v2/5105_28241_000018_000000.wav
+  - ./assets/long/reference_12kbps/5105_28241_000018_000000.wav
+  - ./assets/long/livespeech_v2/5105_28241_000018_000000.wav
+  - ./assets/long/reference_raw/5105_28241_000018_000000.wav
+  - ./assets/long/yourtts/5105_28241_000018_000000.wav
+- enroll: ./assets/long/enrollment_samples/4446_2273_000020_000001.enroll.wav
+  id: '17'
+  samples:
+  - ./assets/long/livespeech_v2/4446_2273_000020_000001.wav
+  - ./assets/long/reference_raw/4446_2273_000020_000001.wav
+  - ./assets/long/yourtts/4446_2273_000020_000001.wav
+  - ./assets/long/reference_12kbps/4446_2273_000020_000001.wav
+  - ./assets/long/xtts_v2/4446_2273_000020_000001.wav
+- enroll: ./assets/long/enrollment_samples/4970_29095_000034_000001.enroll.wav
+  id: '18'
+  samples:
+  - ./assets/long/reference_raw/4970_29095_000034_000001.wav
+  - ./assets/long/reference_12kbps/4970_29095_000034_000001.wav
+  - ./assets/long/livespeech_v2/4970_29095_000034_000001.wav
+  - ./assets/long/xtts_v2/4970_29095_000034_000001.wav
+  - ./assets/long/yourtts/4970_29095_000034_000001.wav
+- enroll: ./assets/long/enrollment_samples/5105_28233_000018_000002.enroll.wav
+  id: '19'
+  samples:
+  - ./assets/long/reference_raw/5105_28233_000018_000002.wav
+  - ./assets/long/yourtts/5105_28233_000018_000002.wav
+  - ./assets/long/livespeech_v2/5105_28233_000018_000002.wav
+  - ./assets/long/reference_12kbps/5105_28233_000018_000002.wav
+  - ./assets/long/xtts_v2/5105_28233_000018_000002.wav
+- enroll: ./assets/long/enrollment_samples/3570_5696_000002_000001.enroll.wav
+  id: '20'
+  samples:
+  - ./assets/long/reference_raw/3570_5696_000002_000001.wav
+  - ./assets/long/xtts_v2/3570_5696_000002_000001.wav
+  - ./assets/long/livespeech_v2/3570_5696_000002_000001.wav
+  - ./assets/long/yourtts/3570_5696_000002_000001.wav
+  - ./assets/long/reference_12kbps/3570_5696_000002_000001.wav
+- enroll: ./assets/long/enrollment_samples/7176_88083_000005_000002.enroll.wav
+  id: '21'
+  samples:
+  - ./assets/long/reference_12kbps/7176_88083_000005_000002.wav
+  - ./assets/long/xtts_v2/7176_88083_000005_000002.wav
+  - ./assets/long/reference_raw/7176_88083_000005_000002.wav
+  - ./assets/long/livespeech_v2/7176_88083_000005_000002.wav
+  - ./assets/long/yourtts/7176_88083_000005_000002.wav
+- enroll: ./assets/long/enrollment_samples/8463_287645_000007_000000.enroll.wav
+  id: '22'
+  samples:
+  - ./assets/long/reference_12kbps/8463_287645_000007_000000.wav
+  - ./assets/long/xtts_v2/8463_287645_000007_000000.wav
+  - ./assets/long/yourtts/8463_287645_000007_000000.wav
+  - ./assets/long/livespeech_v2/8463_287645_000007_000000.wav
+  - ./assets/long/reference_raw/8463_287645_000007_000000.wav
+- enroll: ./assets/long/enrollment_samples/4446_2273_000035_000001.enroll.wav
+  id: '23'
+  samples:
+  - ./assets/long/xtts_v2/4446_2273_000035_000001.wav
+  - ./assets/long/reference_raw/4446_2273_000035_000001.wav
+  - ./assets/long/yourtts/4446_2273_000035_000001.wav
+  - ./assets/long/livespeech_v2/4446_2273_000035_000001.wav
+  - ./assets/long/reference_12kbps/4446_2273_000035_000001.wav
+- enroll: ./assets/long/enrollment_samples/1320_122612_000040_000000.enroll.wav
+  id: '24'
+  samples:
+  - ./assets/long/reference_12kbps/1320_122612_000040_000000.wav
+  - ./assets/long/xtts_v2/1320_122612_000040_000000.wav
+  - ./assets/long/livespeech_v2/1320_122612_000040_000000.wav
+  - ./assets/long/reference_raw/1320_122612_000040_000000.wav
+  - ./assets/long/yourtts/1320_122612_000040_000000.wav
+- enroll: ./assets/long/enrollment_samples/3570_5696_000002_000001.enroll.wav
+  id: '25'
+  samples:
+  - ./assets/long/reference_raw/3570_5696_000002_000001.wav
+  - ./assets/long/reference_12kbps/3570_5696_000002_000001.wav
+  - ./assets/long/xtts_v2/3570_5696_000002_000001.wav
+  - ./assets/long/livespeech_v2/3570_5696_000002_000001.wav
+  - ./assets/long/yourtts/3570_5696_000002_000001.wav
+- enroll: ./assets/long/enrollment_samples/237_134493_000006_000004.enroll.wav
+  id: '26'
+  samples:
+  - ./assets/long/yourtts/237_134493_000006_000004.wav
+  - ./assets/long/livespeech_v2/237_134493_000006_000004.wav
+  - ./assets/long/reference_12kbps/237_134493_000006_000004.wav
+  - ./assets/long/xtts_v2/237_134493_000006_000004.wav
+  - ./assets/long/reference_raw/237_134493_000006_000004.wav
+- enroll: ./assets/long/enrollment_samples/4970_29095_000034_000001.enroll.wav
+  id: '27'
+  samples:
+  - ./assets/long/xtts_v2/4970_29095_000034_000001.wav
+  - ./assets/long/reference_raw/4970_29095_000034_000001.wav
+  - ./assets/long/reference_12kbps/4970_29095_000034_000001.wav
+  - ./assets/long/yourtts/4970_29095_000034_000001.wav
+  - ./assets/long/livespeech_v2/4970_29095_000034_000001.wav
+- enroll: ./assets/long/enrollment_samples/5683_32865_000018_000000.enroll.wav
+  id: '28'
+  samples:
+  - ./assets/long/reference_raw/5683_32865_000018_000000.wav
+  - ./assets/long/reference_12kbps/5683_32865_000018_000000.wav
+  - ./assets/long/yourtts/5683_32865_000018_000000.wav
+  - ./assets/long/xtts_v2/5683_32865_000018_000000.wav
+  - ./assets/long/livespeech_v2/5683_32865_000018_000000.wav
+- enroll: ./assets/long/enrollment_samples/8230_279154_000028_000004.enroll.wav
+  id: '29'
+  samples:
+  - ./assets/long/reference_12kbps/8230_279154_000028_000004.wav
+  - ./assets/long/xtts_v2/8230_279154_000028_000004.wav
+  - ./assets/long/yourtts/8230_279154_000028_000004.wav
+  - ./assets/long/reference_raw/8230_279154_000028_000004.wav
+  - ./assets/long/livespeech_v2/8230_279154_000028_000004.wav
+- enroll: ./assets/long/enrollment_samples/1089_134686_000014_000003.enroll.wav
+  id: '30'
+  samples:
+  - ./assets/long/yourtts/1089_134686_000014_000003.wav
+  - ./assets/long/livespeech_v2/1089_134686_000014_000003.wav
+  - ./assets/long/xtts_v2/1089_134686_000014_000003.wav
+  - ./assets/long/reference_12kbps/1089_134686_000014_000003.wav
+  - ./assets/long/reference_raw/1089_134686_000014_000003.wav
