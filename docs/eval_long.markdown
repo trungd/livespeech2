@@ -1,19 +1,29 @@
 ---
 layout: page
-title: "Evaluation Form"
+title: "Evaluation Form (Long Speech)"
 --- 
 
-### Samples (Long)
+## Instructions
 
-Listen to the FULL audio, and rate (1) the naturalness and (2) the similarity to the enrollment speech in a scale from 1-5.
 
-1 - Bad
-2 - Poor
-3 - Fair
-4 - Good
-5 - Excellent
+Please listen to the entire audio clip and rate it based on two criteria:
 
-Your rated scores will be saved automatically. When you finish, please click Submit at the end of this page.
+1. Naturalness
+2. Similarity to the enrollment speech
+
+Use the following scale for your ratings:
+
+- 1 - Bad
+- 2 - Poor
+- 3 - Fair
+- 4 - Good
+- 5 - Excellent
+
+Your scores will be saved automatically. You can close and reopen this page at any time.
+
+Once you have completed your ratings, click Submit at the end of the page to send your scores.
+
+Your contribution is greatly appreciated. Thank you!
 
 <style>
 select {
@@ -32,9 +42,6 @@ select {
         <td>Audio 3</td>
         <td>Audio 4</td>
         <td>Audio 5</td>
-        <td>Audio 6</td>
-        <td>Audio 7</td>
-        <td>Audio 8</td>
     </tr>
     {% for samples in site.data.samples_long_shuffled_nmos %}
         <tr>
@@ -80,3 +87,20 @@ select {
     {% endfor %}
 </table>
 </div>
+
+<script>
+function submit() {
+    const elements = document.querySelectorAll('[id^="long"]');
+    const scores = Object.fromEntries(Array.from(elements).map(element => [element.id, element.value]))
+    const scores_str = JSON.stringify(scores)
+    document.getElementById("score_str").value = scores_str
+    navigator.clipboard.writeText(scores_str)
+    alert("Your scores were copied to the clipboard. Please send it back to the requester.")
+}
+</script>
+
+
+<button onclick="submit()">Submit</button>
+
+<label>Please send your scores back to the requester.</label>
+<textarea id="score_str" style="width: 100%"></textarea>

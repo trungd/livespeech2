@@ -1,19 +1,28 @@
 ---
 layout: page
-title: "Evaluation Form"
+title: "Evaluation Form (Short Speech)"
 --- 
 
-### Samples (Short)
+## Instructions
 
-Listen to the FULL audio, and rate (1) the naturalness and (2) the similarity to the enrollment speech in a scale from 1-5.
+Please listen to the entire audio clip and rate it based on two criteria:
 
-1 - Bad
-2 - Poor
-3 - Fair
-4 - Good
-5 - Excellent
+1. Naturalness
+2. Similarity to the enrollment speech
 
-Your rated scores will be saved automatically. When you finish, please click Submit at the end of this page.
+Use the following scale for your ratings:
+
+- 1 - Bad
+- 2 - Poor
+- 3 - Fair
+- 4 - Good
+- 5 - Excellent
+
+Your scores will be saved automatically. You can close and reopen this page at any time.
+
+Once you have completed your ratings, click Submit at the end of the page to send your scores.
+
+Your contribution is greatly appreciated. Thank you!
 
 <style>
 select {

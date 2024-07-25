@@ -3,18 +3,18 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Evaluation Form | LiveSpeech</title>
+<title>Evaluation Form (Long Speech) | LiveSpeech</title>
 <meta name="generator" content="Jekyll v3.9.5" />
-<meta property="og:title" content="Evaluation Form" />
+<meta property="og:title" content="Evaluation Form (Long Speech)" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="http://localhost:4000/livespeech/eval_long.html" />
 <meta property="og:url" content="http://localhost:4000/livespeech/eval_long.html" />
 <meta property="og:site_name" content="LiveSpeech" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Evaluation Form" />
+<meta property="twitter:title" content="Evaluation Form (Long Speech)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"Evaluation Form","url":"http://localhost:4000/livespeech/eval_long.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Evaluation Form (Long Speech)","url":"http://localhost:4000/livespeech/eval_long.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/livespeech/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/livespeech/feed.xml" title="LiveSpeech" /></head>
 <style>
@@ -31,21 +31,34 @@
         <article class="post">
 
   <header class="post-header" style="text-align: center;">
-    <h1 class="post-title" style="font-size: 200%">Evaluation Form</h1>
+    <h1 class="post-title" style="font-size: 200%">Evaluation Form (Long Speech)</h1>
   </header>
 
   <div class="post-content">
-    <h3 id="samples-long">Samples (Long)</h3>
+    <h2 id="instructions">Instructions</h2>
 
-<p>Listen to the FULL audio, and rate (1) the naturalness and (2) the similarity to the enrollment speech in a scale from 1-5.</p>
+<p>Please listen to the entire audio clip and rate it based on two criteria:</p>
 
-<p>1 - Bad
-2 - Poor
-3 - Fair
-4 - Good
-5 - Excellent</p>
+<ol>
+  <li>Naturalness</li>
+  <li>Similarity to the enrollment speech</li>
+</ol>
 
-<p>Your rated scores will be saved automatically. When you finish, please click Submit at the end of this page.</p>
+<p>Use the following scale for your ratings:</p>
+
+<ul>
+  <li>1 - Bad</li>
+  <li>2 - Poor</li>
+  <li>3 - Fair</li>
+  <li>4 - Good</li>
+  <li>5 - Excellent</li>
+</ul>
+
+<p>Your scores will be saved automatically. You can close and reopen this page at any time.</p>
+
+<p>Once you have completed your ratings, click Submit at the end of the page to send your scores.</p>
+
+<p>Your contribution is greatly appreciated. Thank you!</p>
 
 <style>
 select {
@@ -64,9 +77,6 @@ select {
         <td>Audio 3</td>
         <td>Audio 4</td>
         <td>Audio 5</td>
-        <td>Audio 6</td>
-        <td>Audio 7</td>
-        <td>Audio 8</td>
     </tr>
     
         <tr>
@@ -5501,6 +5511,22 @@ select {
     
 </table>
 </div>
+
+<script>
+function submit() {
+    const elements = document.querySelectorAll('[id^="long"]');
+    const scores = Object.fromEntries(Array.from(elements).map(element => [element.id, element.value]))
+    const scores_str = JSON.stringify(scores)
+    document.getElementById("score_str").value = scores_str
+    navigator.clipboard.writeText(scores_str)
+    alert("Your scores were copied to the clipboard. Please send it back to the requester.")
+}
+</script>
+
+<p><button onclick="submit()">Submit</button></p>
+
+<p><label>Please send your scores back to the requester.</label></p>
+<textarea id="score_str" style="width: 100%"></textarea>
 
   </div>
 
