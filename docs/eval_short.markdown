@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Evaluation Form (Short Speech)"
+title: "Evaluation Form (Short)"
 --- 
 
 ## Instructions

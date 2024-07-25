@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Evaluation Form (Long Speech)"
+title: "Evaluation Form (Long)"
 --- 
 
 ## Instructions
