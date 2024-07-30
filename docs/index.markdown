@@ -27,24 +27,24 @@ Model Architecture
         <td width="300">Transcript</td>
         <td>Enrollment</td>
         <td>Reference</td>
+        <td>LiveSpeech v2</td>
         <td>YourTTS</td>
         <td>SpeechX</td>
         <td>XTTS-v2</td>
         <td>MetaVoice</td>
         <td>LiveSpeech v1</td>
-        <td>LiveSpeech v2</td>
     </tr>
     {% for sample in site.data.samples_short %}
         <tr>
             <td width="300">{{ sample.transcript }}</td>
             <td><audio controls><source src="./assets/short/enrollment_samples/{{ sample.id }}.enroll.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/short/reference_raw/{{ sample.id }}.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="./assets/short/livespeech_v2/{{ sample.id }}.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/short/yourtts/{{ sample.id }}.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/short/valle/{{ sample.id }}.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/short/xtts_v2/{{ sample.id }}.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/short/metavoice/{{ sample.id }}.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/short/livespeech_v1/{{ sample.id }}.wav" type="audio/wav"></audio></td>
-            <td><audio controls><source src="./assets/short/livespeech_v2/{{ sample.id }}.wav" type="audio/wav"></audio></td>
         </tr>
     {% endfor %}
 </table>
@@ -60,18 +60,18 @@ Model Architecture
         <td style="width: 200px">Transcript</td>
         <td>Enrollment</td>
         <td>Reference</td>
+        <td>LiveSpeech v2</td>
         <td>YourTTS</td>
         <td>XTTS-v2</td>
-        <td>LiveSpeech v2</td>
     </tr>
     {% for sample in site.data.samples_long %}
         <tr>
             <td>{{ sample.transcript }}</td>
             <td><audio controls><source src="./assets/long/enrollment_samples/{{ sample.id }}.enroll.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/long/reference_raw/{{ sample.id }}.wav" type="audio/wav"></audio></td>
+            <td><audio controls><source src="./assets/long/livespeech_v2/{{ sample.id }}.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/long/yourtts/{{ sample.id }}.wav" type="audio/wav"></audio></td>
             <td><audio controls><source src="./assets/long/xtts_v2/{{ sample.id }}.wav" type="audio/wav"></audio></td>
-            <td><audio controls><source src="./assets/long/livespeech_v2/{{ sample.id }}.wav" type="audio/wav"></audio></td>
         </tr>
     {% endfor %}
 </table>
