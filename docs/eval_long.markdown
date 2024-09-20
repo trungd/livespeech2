@@ -100,7 +100,7 @@ function submit() {
 </script>
 
 
-<button onclick="submit()">Submit</button>
+<button onclick="submit()">Generate JSON</button>
 
 <label>Please send your scores back using this from [https://forms.gle/7cL9Rb8pytav26yu8](https://forms.gle/7cL9Rb8pytav26yu8).</label>
 <textarea id="score_str" style="width: 100%"></textarea>
